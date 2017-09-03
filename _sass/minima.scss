@@ -1,0 +1,70 @@
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lobster|Slabo+27px);
+@charset "utf-8";
+
+// Google font variables
+$slabo-gfont: 'Slabo 27px', serif;
+$lobster-gfont: 'Lobster', cursive;
+$gloria-gfont: 'Gloria Hallelujah', cursive;
+
+// Define defaults for each variable.
+
+$base-font-family: $slabo-gfont; //"Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$title-font-family: $gloria-gfont;
+
+$mega-font-size: 100px;
+$h1-font-size: 70px;
+$h2-font-size: 40px;
+$h3-font-size: 30px;
+$h4-font-size: 24px;
+
+$spacing-unit:     30px !default;
+
+$text-color:       #333 !default;
+$background-color: #fefef3 !default;
+$brand-color:      #fe5f55 !default;
+
+$blue-color:	   #92b5bd;
+$yellow-color:	   #ede24e;
+$red-color:	   #df6d59;
+$purple-color:	   #6b2339;
+
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+
+// Width of the content area
+$content-width:    800px !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Import partials.
+@import
+  "minima/base",
+  "minima/layout",
+  "minima/syntax-highlighting"
+;
