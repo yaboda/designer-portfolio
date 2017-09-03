@@ -2,25 +2,26 @@
 layout: main_page
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-  
-  {{ content }}
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-
-</div>
+<!-- section for featured posts -->
+<section class="site-section">
+    <div class="wrapper"></div>
+</section>
+<!-- section for latest articles -->
+<section class="site-section section-last">
+    <div class="wrapper">
+	<h1>Latest articles</h1>
+	<ul class="post-list">
+	  {% for post in site.posts | limit:4 %}
+	  <li class="post">
+		<h2>{{ post.title }} </h2>
+		<p>
+		    {{ post.content | strip_html | strip_newlines | truncate: 200 }}
+		</p>
+		<p class="post-read-more-link">
+		  <a href="#"> read more ... </a>
+		</p>
+	  </li>
+	  {% endfor %}
+	</ul>
+    </div>
+</section>
