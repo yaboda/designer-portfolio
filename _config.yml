@@ -20,8 +20,8 @@ description: >
              Using programming languages, C, Perl, Ruby, Python.
              Applications experience include network applications, like ethernet switches routers, also payment systems and web applications.
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.yakata-yaboda.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/designer-portfolio" # the subpath of your site, e.g. /blog
+url: "https://yaboda.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: yaboda
 github_username:  yaboda
 
