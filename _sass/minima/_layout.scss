@@ -15,7 +15,7 @@
 	margin: 0 0.5em;
 	font-size: 1.5em;
     }
-    background: url('/images/top_bar.png');
+    background: url('../images/top_bar.png');
     background-size: cover;
     border-style: 0.1px solid;
 }
@@ -34,7 +34,7 @@
 .site-header {
     padding: 2em 0 0;
     border: 0.1px solid #ccc;
-    background: url('/images/top_header.png');
+    background: url('../images/top_header.png');
     background-size: cover;
     height: 200px;
     position: relative;
@@ -43,7 +43,7 @@
 .site-index-header {
     padding: 2em 0 0;
     border: 0.1px solid #ccc;
-    background: url('/images/main_header.png');
+    background: url('../images/main_header.png');
     background-size: cover;
     height: 300px;
     position: relative;
@@ -55,7 +55,7 @@
 .site-footer {
     padding: 2em 0 0;
     border: 0.1px solid #ccc;
-    background: url('/images/top_bar.png');
+    background: url('../images/top_bar.png');
     background-size: cover;
     height: 200px;
     position: relative;

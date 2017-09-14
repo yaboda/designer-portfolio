@@ -4,7 +4,7 @@
 	<ul>
 	    {% for link in site.links %}
 	    <li>
-		<a href="{{ link.url }}">{{link.title}}</a>
+		<a href="{{ site.baseurl }}{{ link.url }}">{{link.title}}</a>
 		    {% endfor %}
 	</ul>
     </nav>
