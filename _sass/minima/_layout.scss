@@ -7,10 +7,15 @@
     ul {
 	margin: 1em 0;
 	list-style:none;
+	 white-space:nowrap;
+	 display: inline-block;
+	 width: 70%;
+	 display: inline-table;
+
     }
 
     li {
-	display: inline-block;
+        display: table-cell;
 	margin: 0 0.5em;
 	font-size: 1.5em;
     }
@@ -40,7 +45,7 @@
     padding: 2em 0 0;
     border: 0;
     background: url('../images/main_header.png');
-    height: 500px;
+    height: 420px;
     background-size: cover;
 
 }
