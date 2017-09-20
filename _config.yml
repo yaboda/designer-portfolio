@@ -34,8 +34,6 @@ links:
    url: /work
  - title: blog
    url: /blog
- - title: hire me
-   url: /hire-me
 
 # Build settings
 markdown: kramdown
