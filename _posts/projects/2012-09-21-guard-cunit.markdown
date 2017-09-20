@@ -4,6 +4,7 @@ title:  "guard-cunit"
 date:   2012-09-21 18:43:00 +0300
 tags:  tdd c cunit guard guard-cunit
 categories: projects
+featured_image: "/assets/guard-cunit.jpg"
 ---
 
 guard-cunit version 0.0.1 released :) at https://github.com/teacup-on-rockingchair/guard-cunit.

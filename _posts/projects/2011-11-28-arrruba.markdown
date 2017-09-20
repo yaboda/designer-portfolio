@@ -4,6 +4,7 @@ title:  "Arrruba!"
 date:   2011-11-28 13:30:13 +0300
 tags:  aruba bash busybox cucumber tdd rspec ruby
 categories: projects
+featured_image: "/assets/aruba.jpg"
 ---
 Just opened the window to get some fresh air.
 

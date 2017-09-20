@@ -1,14 +1,25 @@
 ---
 layout: main_page
 ---
-
+<!-- section for featured projects -->
+<section class="site-section">
+    <div class="wrapper">
+      <h1>Projects</h1>
+      <ul class="project-list">
+	  {% assign count = 0 %}
+	  {% for project in site.categories['projects'] reversed | limit:3 %}
+	      {% include project.html %}
+	  {% endfor %}
+      </ul>
+    </div>
+</section>
 <!-- section for featured posts -->
 <section class="site-section">
     <div class="wrapper">
       <h1>Featured articles</h1>
       <ul class="post-list">
 	  {% assign count = 0 %}
-	  {% for post in site.posts %}
+	  {% for post in site.categories['articles'] %}
 	  {% if post.featured == true and count < 2%}
 	  <li class="post-featured">
 	      {% include post.html %}

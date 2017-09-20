@@ -42,7 +42,7 @@ $grey-color-dark:  darken($grey-color, 25%) !default;
 
 $text-color:       #333 !default;
 $background-color: #fefef3 !default;
-$brand-color:      $white-color !default;
+$brand-color:      $red-color !default;
 
 
 // Width of the content area
@@ -73,5 +73,6 @@ $on-laptop:        800px !default;
   "minima/base",
   "minima/layout",
   "minima/syntax-highlighting",
-  "components/post"
+  "components/post",
+  "components/project"
 ;

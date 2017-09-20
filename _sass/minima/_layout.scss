@@ -1,4 +1,14 @@
 .site-nav {
+  a {
+    color: $white-color;
+    text-decoration: none;
+    transition: 0.3s;
+  
+    &:hover {
+      color: $brand-color;
+      } 
+    }   
+    
     width: 100%;
     bottom: 0;
     text-align: center;
@@ -35,6 +45,15 @@
 }
 
 .site-header {
+  a {
+    color: $white-color;
+    text-decoration: none;
+    transition: 0.3s;
+  
+    &:hover {
+      color: $brand-color;
+      } 
+    }   
     padding: 2em 0 0;
     border: 0;
     background: url('../images/main_header.png');
@@ -42,6 +61,15 @@
 }
 
 .site-index-header {
+  a {
+    color: $white-color;
+    text-decoration: none;
+    transition: 0.3s;
+  
+    &:hover {
+      color: $brand-color;
+      } 
+    }   
     padding: 2em 0 0;
     border: 0;
     background: url('../images/main_header.png');
