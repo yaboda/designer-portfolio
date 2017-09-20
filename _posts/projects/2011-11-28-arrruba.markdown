@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "Arrruba!"
+date:   2011-11-28 13:30:13 +0300
+tags:  aruba bash busybox cucumber tdd rspec ruby
+categories: projects
+---
+Just opened the window to get some fresh air.
+
+It smells like November. Cold, foggy air. I can here the dumb noise of the cars through the park of the nearby boulevard.
+
+And I remember my this week experience with ... aruba
+
+![My wonderful aruba pic]({{ site.url }}/assets/aruba.jpg)
+
+I had to make a bash script for configuration wizard. I have always felt walking on broken glass when writing bash. Especially in this case when the script has to run on  that strange shell dialect for the busybox - ash, for which I even don't have at disposal some descent feature like read with a timeout. - I had to make a C program for that part ;)
+
+Anyways ... I had to start, though got chills thinking about it.
+
+The script has to built 2 configuration files , and build another bash script in order to set variable via external program in u-boot variables or to copy default configuration from previous runs.
+
+I've read on a couple places and tried couple of times cucumber/aruba just for the "hello world" examples . And I knew my script might grow quite a bit so I decided - this time I will try it for real.
+
+On my system it did not worked with the gem install aruba - I am not sure but for some reason it gave me the following error:
+
+"[/usr/lib/ruby/gems/1.9.1/specifications/aruba-0.4.7.gemspec]: Illformed requirement ["#<Syck::DefaultKey:0xbab8b18> 1.0.9"]"
+
+ I am running
+
+ruby-1.9.2
+
+gem-1.8.11
+
+on a Ubuntu 11.10. Found some shots in the dark on the web, but none of them worked for me, so " what the hack " , go github, clone, rake and gem install from the locally built one, my friend... and it worked. I needed to get some gems extra but all worked smoothly that way.
+
+And the fun begun ... not exactly ;). The first time I tried aruba it was giving me access to the stdout and stderr buffers and I did whatever checks I wanted with them . Now I think a year later, the only thing I was supposed to do was to write scenarios steps' to match aruba step definitions. Well this at least seemed like the "Shu" level.
+
+The script starts with a timer to skip the wizard and I thought I had to use the @slow_process tag and the relevant wait option in the env.rb:
+
+Before('@slow_process') do
+  @aruba_io_wait_seconds = 15 
+end
+But actually it came out I did not need that, a simple step with a sleep method  in it.
+
+Then I started that way adding option by option in the configure script:
+
+@announce @current
+Scenario: Choosing Board type
+  Given there is "arubamenu.sh" file
+  When I run `arubamenu.sh result_commands.sh` interactively
+  And I type ""
+  And I type "0"
+  And I type "1"
+  And I type "q"
+  Then the output should contain:
+"""
+Board chosen is MY_ZERO_BOARD
+"""
+And the commands-file should contain uboot var "boardType" set to "MY_ZERO_BOARD"
+
+I added the "q" option in order to be able to quit at any point of the configuration, so at the beginning I did not want to take care of configuring stuff, which was not so clear to me. But when the "And I type..."  steps became arround 15, I remembered Matt Wynne's talk I watched the other day on "BDD As It Meant To Be Done" ... I had a deja vu. Matt started the talk with exactly such example a scenario one-screen big. And I was sick of me doing copy paste the same steps. Scratching my head I opened the RSpec book, found a wonderful example how to define steps by using existing steps, found out the syntax changed a bit since my book was published and there I got:
+
+When /^I confiugre ip topology$/ do 
+  steps %{  
+  And I type "1.1.1.1" 
+  And I type "2.2.2.2" 
+  And I type "3.3.3.3" 
+  And I type "4.4.4.4" 
+  And I type "5.5.5.5" 
+  And I type "6.6.6.6" 
+}  
+end
+
+
+Nice and clean and my scenarios became much easier to read and present.
+
+Since I was generating script, while browsing the feature files of aruba - I found out I can use the
+
+<Then the file "thedir/thefile" should contain "xy">
+
+step definition it already had, but later on I needed to make my script more readable for presenting the meaning of the file command in the file so I redefined them with mine. Anyways the above was quite useful to kick off.
+
+ Last but no least, I was feeling not so safe while adding features to the script and scenarios to the feature file. Using cucumber I often debug the behaviour of the application by putting puts methods here and there. Using aruba it captured all my stdout and I was not so happy with it. I knew there should be some other way, and start reading the options that aruba takes... And I found the @puts tag. So adding a new scenario, I started with :
+
+@announce @current @puts
+tags.
+
+And two days after there I was - my menu script working, I had 260 lines of bash tested by 29 scenarios in 6 features with 284 asserts, and only 122 lines of ruby code step definitions.
+
+ I checked that statistics by chance but felt good about it ;)
