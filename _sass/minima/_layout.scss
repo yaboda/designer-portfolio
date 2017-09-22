@@ -13,9 +13,9 @@
     bottom: 0;
     text-align: center;
     font-family: $title-font-family;
-    font-size: 1vw;
+    font-size: 1.5vw;
     ul {
-	margin: 1em 0;
+	margin: 0 0;
 	list-style:none;
 	 white-space:nowrap;
 	 display: inline-block;
@@ -56,7 +56,7 @@
     }   
     padding: 2em 0 0;
     border: 0;
-    background: url('../images/main_header.png');
+    background: url('../images/main_header.jpg');
     background-size: cover;
 }
 
@@ -72,7 +72,7 @@
     }   
     padding: 2em 0 0;
     border: 0;
-    background: url('../images/main_header.png');
+    background: url('../images/main_header.jpg');
     height: 420px;
     background-size: cover;
 
