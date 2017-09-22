@@ -16,13 +16,13 @@
 title: Yaboda Software Workshop 
 email: yakata.yaboda@gmail.com
 description: >
-             Embedded, Network, System and Payment Software, with experience in Linux, VxWorks, etc.
-             Using programming languages, C, Perl, Ruby, Python.
-             Applications experience include network applications, like ethernet switches routers, also payment systems and web applications.
+             Software engineering for Network, System, Embedded, Payment and Web environments, with experience in Linux, VxWorks, etc.
+             Using programming languages C, Perl, Ruby, Python, etc.
+             
 
 baseurl: "/designer-portfolio" # the subpath of your site, e.g. /blog
 url: "https://yaboda.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: yaboda
+twitter_username: yaboda_software
 github_username:  yaboda
 
 permalink: /:categories/:title
