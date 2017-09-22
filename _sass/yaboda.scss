@@ -70,9 +70,9 @@ $on-laptop:        800px !default;
 
 // Import partials.
 @import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting",
-  "components/post",
-  "components/project"
+  "yaboda/base",
+  "yaboda/layout",
+  "yaboda/syntax-highlighting",
+  "yaboda/components/post",
+  "yaboda/components/project"
 ;
