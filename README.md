@@ -1,1 +1,1 @@
-Sandbox project with jekyll.rb
+Sandbox project with [jekyllrb](https://jekyllrb.com/)
